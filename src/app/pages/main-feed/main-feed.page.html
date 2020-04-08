@@ -1,0 +1,41 @@
+
+<ion-content fullscreen class="ion-padding">
+  <img src="assets/undraw_medicine.svg">
+  <div style="text-align:center" *ngIf="healthStatus == null; else gHealth;">
+    <p style="color: #362970;  font-weight: 600;">Hola, como te sientes hoy?</p>
+    <ion-row>
+      <ion-col>
+        <ion-button  shape="round" (click)="goodHealth()">Bien</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" shape="round" routerLink="/symptoms">Mal</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ng-template #gHealth class="result" >
+    <div style="color: var(--ion-color-success-shade); opacity: 60%; text-align: center;">
+      <p><span style="font-weight: 700;">Enhorabuena!</span> Sigue mateniendo precauciones.</p>
+    </div>
+  </ng-template>
+  <div>
+    <h1 style="color: black; font-weight: 800;">
+      Noticias
+    </h1>
+    <ion-refresher slot="fixed" >
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <div *ngIf="articles$ | async ; let articles;">
+      <ion-card *ngFor="let article of articles" (click)="presentModal()">
+        <img style="object-fit: cover; width: 100%;"src={{article.image}}>
+        <ion-card-header>
+          <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{article.description}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

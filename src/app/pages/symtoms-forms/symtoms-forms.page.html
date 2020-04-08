@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <ion-button fill='clear' routerLink='/tabs/temperature'>
+    <ion-icon name="arrow-back-outline" ></ion-icon>
+  </ion-button>
+  <h1 style="color: black; font-weight: 800;">
+    Sintomas <span style="font-weight: 200;">Autodiagnostico</span>
+  </h1>
+  <div *ngFor="let c_questions of currentQuestions[currentIdx]; let indx_1 = index">
+    <h3>{{c_questions.question}}</h3>
+    <div class="square-container">
+      <div class="square" *ngFor="let answer of c_questions.answers; let indx_2 = index;" >
+        <div class="content" (click)="active(answer,indx_1, indx_2)" [ngClass]="answer.active ? 'select' : 'deselect'">
+          {{answer.button}}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>
+<div class="ion-padding">
+  <ion-button shape="round"  expand="block" fill="outline" (click)="advance()" *ngIf="currentIdx < currentQuestions.length -1">Siguiente</ion-button>
+  <ion-button shape="round"  expand="block" (click)="confirm()" *ngIf="currentIdx == currentQuestions.length -1">Confirmar</ion-button>
+</div>

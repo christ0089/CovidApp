@@ -1,5 +1,7 @@
 {
   "name": "covid_mex",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

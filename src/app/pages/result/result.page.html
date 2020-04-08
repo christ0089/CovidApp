@@ -1,0 +1,58 @@
+<ion-content class="ion-padding">
+  <h1 style="color: black; font-weight: 800;">
+    Resultados<span style="font-weight: 200;"> - Autodiagnostico</span>
+  </h1>
+  <img
+    *ngIf="healthy_check == true; else unhealthy"
+    src="assets/undraw_healthy_lifestyle.svg"
+  />
+  <ng-template #unhealthy>
+    <img src="assets/undraw_doctors_hwt.svg" />
+  </ng-template>
+  <h3 style="color: rgb(56, 56, 56); font-weight: 400;">
+    {{title[state]}}
+  </h3>
+  <ion-list>
+    <ion-item>
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      <ion-label
+        >Lavarse las manos frequentemente o desinfecte con gel de
+        alchol</ion-label
+      >
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Permanecer en casa.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      <ion-label>No comparta articulos antibacteriales.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Evite tocarse los ojos, la nariz y la boca.</ion-label>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button
+      (click)="closeModal()"
+      *ngIf="healthy_check; else unhealth"
+      color="success"
+      expand="block"
+      >Aceptar</ion-button
+    >
+    <ng-template #unhealth>
+      <ion-button (click)="closeModal()" color="danger" expand="block"
+        >Llamar Medico
+        <ion-icon slot="start" shape="round" name="call-outline"></ion-icon>
+      </ion-button>
+      <ion-button
+        (click)="closeModal()"
+        color="danger"
+        expand="block"
+        fill="outline"
+        >Regresar
+      </ion-button>
+    </ng-template>
+  </div>
+</ion-content>

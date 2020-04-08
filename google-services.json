@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1088942456995",
+    "firebase_url": "https://covid-safeguard.firebaseio.com",
+    "project_id": "covid-safeguard",
+    "storage_bucket": "covid-safeguard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088942456995:android:ad75e3c48df30142257f16",
+        "android_client_info": {
+          "package_name": "com.Brixar.CovidMex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088942456995-5ke1ed8v05pipt72itm7a41di9umdj6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Brixar.CovidMex",
+            "certificate_hash": "54fb3750182efda5b7352b44cf9fb9769feb4874"
+          }
+        },
+        {
+          "client_id": "1088942456995-ir8k5mhd09n6ai6sel959ssacokbsle1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwGNPcUI7rT9qR3sFfdYncPSnW1mT06YQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088942456995-ir8k5mhd09n6ai6sel959ssacokbsle1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

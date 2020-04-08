@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .square-container {
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .square {
+    width: calc(100% / 2);
+    float: left;
+    position: relative;
+    padding-bottom: 125px;
+  }
+  
+  .square .content {
+      width: calc(100% - 16px);
+      height: 100px;
+      margin: 8px;
+      padding: 16px;
+      position: absolute;
+      color: rgb(0, 0, 0);
+      font-weight: 700;
+      border-radius: 15px;
+      background-color: #8eccf87c;
+      color: #0d4369e1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  }
+
+  .select { 
+    background-color: #0751867c !important;
+    color: #fcfcfce1 !important;
+  }
+
+  .deselect { 
+    background-color: #8eccf87c;
+  }
+  
+  

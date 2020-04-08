@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .square-container {
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .square {
+    width: calc(100% / 2);
+    float: left;
+    position: relative;
+    padding-bottom: calc(100% / 2);
+  }
+  
+  .square .content {
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      margin: 8px;
+      padding: 16px;
+      position: absolute;
+      color: rgba(19, 19, 19, 0.568);
+      font-weight: 700;
+      border-radius: 15px;
+      background-color: #9d6cec7c;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  }
+

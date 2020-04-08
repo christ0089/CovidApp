@@ -1,0 +1,13 @@
+
+
+<ion-content class="ion-padding">
+  <ion-button fill='clear' (click)="closeModal()">
+    <ion-icon name="arrow-back-outline" ></ion-icon>
+  </ion-button>
+  <h1 style="color: black; font-weight: 800;">
+    {{article.title}}
+  </h1>
+
+  <div [innerHTML]="article.description"></div>
+  <ion-button (click)="shareButton()">Compartir</ion-button>
+</ion-content>
