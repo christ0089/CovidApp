@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ArticlePageRoutingModule } from './article-routing.module';
 
 import { ArticlePage } from './article.page';
+import { PipesModule } from 'src/app/pipes/pipe.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PipesModule,
     ArticlePageRoutingModule
   ],
   declarations: [ArticlePage]

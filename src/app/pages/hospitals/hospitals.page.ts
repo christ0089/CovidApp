@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InterfaceCenter, CENTER_STATUS, Center } from '../Models/iCenters';
-import { NavServiceService } from '../services/nav-service.service';
+import { InterfaceCenter, CENTER_STATUS, Center } from '../../Models/iCenters';
+import { NavServiceService } from '../../services/nav-service.service';
 
 @Component({
   selector: 'app-hospitals',

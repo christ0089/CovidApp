@@ -8,6 +8,8 @@ import { ArticlePage } from "../article/article.page";
 import { ModalController } from "@ionic/angular";
 
 import { createAnimation } from "@ionic/core";
+import { NavServiceService } from 'src/app/services/nav-service.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: "app-main-feed",
@@ -18,19 +20,17 @@ export class MainFeedPage implements OnInit {
   articles$: Observable<any>;
   healthStatus = null;
   constructor(
-    private db: AngularFireDatabase,
+    private db: AngularFirestore,
+    private navService: NavServiceService,
     private modalController: ModalController
   ) {
     this.articles$ = this.db
-      .list(`Articulos`)
+      .collection(`Articulos`)
       .snapshotChanges()
       .pipe(
         map((actions) =>
-          actions.map((action) => ({
-            key: action.key,
-            ...action.payload.exportVal(),
-          }))
-        )
+          actions.map((action) => (Object.assign({ key: action.payload.doc.id }, action.payload.doc.data()))
+        ))
       );
     this.articles$.subscribe((trans) => {
       console.log(trans);
@@ -60,10 +60,11 @@ export class MainFeedPage implements OnInit {
 
  
 
-  async presentModal() {
+  async presentModal(article) {
     const modal = await this.modalController.create({
       component: ArticlePage,
     });
+    this.navService.setData(article);
     return await modal.present();
   }
 }

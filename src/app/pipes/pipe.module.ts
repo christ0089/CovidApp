@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { HealthStatePipe } from './health-state.pipe';
 import { CustomDatePipe } from './date-pipe.pipe';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   imports: [
@@ -9,11 +10,13 @@ import { CustomDatePipe } from './date-pipe.pipe';
   ],
   declarations: [ 
     HealthStatePipe,
-    CustomDatePipe
+    CustomDatePipe,
+    SafePipe
   ],
   exports: [
     HealthStatePipe,
-    CustomDatePipe
+    CustomDatePipe,
+    SafePipe
   ]
 })
 export class PipesModule {};

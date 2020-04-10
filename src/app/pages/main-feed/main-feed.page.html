@@ -25,14 +25,13 @@
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
     <div *ngIf="articles$ | async ; let articles;">
-      <ion-card *ngFor="let article of articles" (click)="presentModal()">
+      <ion-card *ngFor="let article of articles" (click)="presentModal(article)">
         <img style="object-fit: cover; width: 100%;"src={{article.image}}>
         <ion-card-header>
           <ion-card-subtitle>{{article.title}}</ion-card-subtitle>
-          <ion-card-title>Card Title</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          {{article.description}}
+          {{article.summarized}}
         </ion-card-content>
       </ion-card>
     </div>

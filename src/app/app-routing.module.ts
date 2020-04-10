@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'hospital',
-    loadChildren: () => import('./hospitals/hospitals.module').then( m => m.HospitalsPageModule)
+    loadChildren: () => import('./pages/hospitals/hospitals.module').then( m => m.HospitalsPageModule)
   },
   
 ];
