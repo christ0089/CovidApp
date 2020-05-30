@@ -2,20 +2,30 @@
   <h1 style="color: black; font-weight: 800;">
     Bitacora<span style="font-weight: 200;"></span>
   </h1>
+  <div style="display: inline-flex !important; ">
+    <ngx-qrcode
+    *ngIf="qr | async; let result"
+    [elementType]="elementType"
+    value="{{result | resultPipe}}"
+    cssClass="aclass"
+    errorCorrectionLevel="L"
+  >
+  </ngx-qrcode>
+  <ion-button shape="round" style="margin-top: auto; margin-bottom: auto;" (click)="scanCodeV2()">Scan Resultados</ion-button>
+  </div>
+ 
   <ion-item routerLink="/symptoms" detail>
     <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
     Examen de Autodiagnostico
   </ion-item>
-
   <h3>Autodiagnosticos Realizados</h3>
   <ion-list>
-    <ion-item   *ngFor="let record of data">
+    <ion-item *ngFor="let record of data">
       <ion-label>
         <h2>Resultado: {{record.result | healthState}}</h2>
         <p>Fecha: {{record.dateRevised | datePipe }}</p>
       </ion-label>
-     
     </ion-item>
   </ion-list>
-
+ 
 </ion-content>

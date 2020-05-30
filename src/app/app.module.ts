@@ -6,6 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
+//import { BluetoothLE } from '@ionic-native/bluetooth-le';
+
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AppComponent } from './app.component';
@@ -27,6 +32,10 @@ import { GoogleMapsProvider } from './services/google-maps/google-maps';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AuthService } from './services/auth.service';
+
+
 export const firebaseConfig = environment.firebaseConst;
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +44,7 @@ export const firebaseConfig = environment.firebaseConst;
     BrowserModule,
     IonicModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireFunctionsModule,
     IonicStorageModule.forRoot(),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -43,16 +53,20 @@ export const firebaseConfig = environment.firebaseConst;
     FormsModule,
     AppRoutingModule,
     ResultPageModule,
+    NgxQRCodeModule,
     ArticlePageModule
     ],
   providers: [
     StatusBar,
     SplashScreen,
     SocialSharing,
+    //BluetoothLE,
     FirebaseX,
     NavServiceService,
     GoogleMapsProvider,
     Geolocation,
+    BarcodeScanner,
+    AuthService,
     TokenService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

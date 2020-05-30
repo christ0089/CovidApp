@@ -1,0 +1,13 @@
+<div  class="ion-padding">
+  <form [formGroup]="userForm" (ngSubmit)="sendSMSCode()">
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input formControlName="phone"  maxLength='10' type='tel'></ion-input>
+    </ion-item>
+    <div id="recaptcha-container"></div>
+    <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Iniciar</ion-button>
+  </form>
+  <div [routerLink]="['../register']">
+    <p>No tienes cuenta? <span style="font-weight: 700;" >Registrate</span></p>
+  </div>
+</div>

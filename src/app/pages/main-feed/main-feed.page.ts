@@ -56,6 +56,7 @@ export class MainFeedPage implements OnInit {
     animation.play();
   }
 
+  
 
 
  

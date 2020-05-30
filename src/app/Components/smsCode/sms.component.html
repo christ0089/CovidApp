@@ -1,0 +1,11 @@
+<div  class="ion-padding">
+  <form [formGroup]="userForm" (ngSubmit)="registerView()">
+    <ion-item>
+      <ion-label position="floating">Codigo SMS</ion-label>
+      <ion-input formControlName="smsCode"  maxLength='6' type='text'></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" >Verificar</ion-button>
+    <ion-button (click)="resend()" expand="block" >Volver a mandar SMS</ion-button>
+    <ion-button expand="block" fill='outline' [routerLink]="['../login']">Regresar</ion-button>
+  </form>
+</div>

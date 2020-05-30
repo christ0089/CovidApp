@@ -1,0 +1,13 @@
+<div  class="ion-padding register" >
+<div *ngIf='register == true;'>
+  <form [formGroup]="userForm" (ngSubmit)="registerForm()">
+  
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input formControlName="phone" type="tel"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Registrar</ion-button>
+  </form>
+  <ion-button expand='block' [routerLink]="['../login']">Regresar</ion-button>
+</div>
+</div>

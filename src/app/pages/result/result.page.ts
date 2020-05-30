@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController, NavController } from "@ionic/angular";
 import { NavServiceService } from "src/app/services/nav-service.service";
+import { Result_Qualification } from 'src/app/Models/iResults';
 
 @Component({
   selector: "app-result",
@@ -22,10 +23,10 @@ export class ResultPage implements OnInit {
     private navService: NavServiceService
   ) {
     console.log(this.navService.getData());
-    if (this.navService.getData() > 10) {
+    if (this.navService.getData() > Result_Qualification.POTENTIAL) {
       this.healthy_check = false;
       this.state = 1;
-      if (this.navService.getData() > 15) {
+      if (this.navService.getData() > Result_Qualification.SICK) {
         this.state = 2;
       }
     } else {

@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { HealthStatePipe } from './health-state.pipe';
 import { CustomDatePipe } from './date-pipe.pipe';
+import { ResultPipe } from './result-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -9,10 +10,12 @@ import { CustomDatePipe } from './date-pipe.pipe';
   ],
   declarations: [ 
     HealthStatePipe,
-    CustomDatePipe
+    CustomDatePipe,
+    ResultPipe,
   ],
   exports: [
     HealthStatePipe,
+    ResultPipe,
     CustomDatePipe
   ]
 })

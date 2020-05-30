@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: 'datePipe'
+  name: "datePipe",
 })
 export class CustomDatePipe implements PipeTransform {
-
   transform(value: number, ...args: any[]): any {
     const today = new Date(Date.now());
     const retrievedDate = new Date(value);
@@ -15,11 +14,10 @@ export class CustomDatePipe implements PipeTransform {
     if (diffDays > 7 && diffDays < 30) {
       const weeks = diffDays % 7;
       if (weeks === 1) {
-        return `hace una semana`
+        return `hace una semana`;
       }
       return `hace ${weeks} Semanas`;
-    }
-    else if (diffDays > 31) {
+    } else if (diffDays > 31) {
       const weeks = diffDays % 7;
       if (weeks == 4) {
         return `hace un mes`;
@@ -32,5 +30,4 @@ export class CustomDatePipe implements PipeTransform {
     }
     return `hace ${diffDays} días`;
   }
-
 }

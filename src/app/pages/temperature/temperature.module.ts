@@ -8,6 +8,7 @@ import { TemperaturePageRoutingModule } from "./temperature-routing.module";
 
 import { TemperaturePage } from "./temperature.page";
 import { PipesModule } from 'src/app/pipes/pipe.module';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { PipesModule } from 'src/app/pipes/pipe.module';
     FormsModule,
     IonicModule,
     PipesModule,
+    NgxQRCodeModule,
     TemperaturePageRoutingModule,
   ],
   declarations: [TemperaturePage],

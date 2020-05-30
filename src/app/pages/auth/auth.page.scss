@@ -1,0 +1,19 @@
+.tenmas {
+    width: 50%;
+    display: block;
+    object-fit: contain;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 10px;
+}
+
+.bank {
+    width: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+
+ion-content {
+    overflow-y: scroll;
+}
