@@ -2,9 +2,7 @@ import * as functions from "firebase-functions";
 
 import * as admin from "firebase-admin";
 
-admin.initializeApp({
-  storageBucket: "tenmas-d09fd.appspot.com",
-});
+
 const path = require("path");
 const os = require("os");
 const fs = require("fs");
@@ -18,46 +16,18 @@ const app = express();
 app.use(cors({ origin: true }));
 
 
-exports.creditAuthorize = functions.https.onCall(async (data, context) => {
-  // When credit is authorized
-  const auth = context.auth?.uid as string;
-  let result = {};
-  console.log(data);
-  const t = new Date();
+// import * as firebaseFunctions from "./firebaseFunctions";
+// import config from "./config";
 
-  const payments: any[] = Array(data.Months)
-    .fill(null)
-    .map((i, e) => {
-      const _date = new Date(t.getFullYear(), t.getMonth() + e, 0, 23, 59, 59);
-      return { payment: 0, date: _date, completed: false };
-    });
+// import getHandshakePin from "./opentrace/getHandshakePin";
+// import getTempIDs from "./opentrace/getTempIDs";
+// import getUploadToken from "./opentrace/getUploadToken";
+// import processUploadedData from "./opentrace/processUploadedData";
 
-  const userObject = {
-    currentBalance: data.ApprovedCredit,
-    payments: payments,
-    activated: true,
-    ApprovedCredit: data.ApprovedCredit,
-  };
-  console.log(userObject);
-  await admin
-    .firestore()
-    .collection("Active_Users")
-    .doc(auth)
-    .update(Object.assign({}, userObject))
-    .then(() => {
-      result = { success: 200, status: "Se ha creado el credito" };
-    })
-    .catch((e) => {
-      result = { success: 400, status: e };
-    });
-  return result;
-});
-
-
-
-exports.validateUser = functions.auth.user().onCreate((user, context) => {
-  // Send Thankyou Email
-});
+// // exports.getHandshakePin = firebaseFunctions.https(getHandshakePin);
+// // exports.getTempIDs = firebaseFunctions.https(getTempIDs);
+// // exports.getUploadToken = firebaseFunctions.https(getUploadToken);
+// // exports.processUploadedData = firebaseFunctions.storage(config.upload.bucket, processUploadedData);
 
 // Creates user if it exists in the database.
 exports.userValidate = functions.https.onCall(async (data) => {
