@@ -67,7 +67,6 @@ export class MapPage {
         console.log(this.mapRef.nativeElement);
         this.Map = new google.maps.Map(this.mapRef.nativeElement, options);
         this.googleMaps.getMarkers(this.Map, lat, lon).subscribe(() => {});
-        
       }, 1000);
     }
 

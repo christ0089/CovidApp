@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
   registerForm() {
     this.loadView();
 
-    
+
     const functionCall = this.functions.httpsCallable('userValidate');
     functionCall({
       phone: '+52' + this.userForm.get('phone').value,
