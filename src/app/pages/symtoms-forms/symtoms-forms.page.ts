@@ -66,6 +66,7 @@ export class SymtomsFormsPage implements OnInit {
         this.currentQuestions = questions;
         this.presentModal();
       }).catch(e => {
+        console.log(e);
         this.presentModal();
       });
     }, time);

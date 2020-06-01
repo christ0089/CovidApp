@@ -11,7 +11,7 @@ import { EventEmitter } from "@angular/core";
 
 import { Router } from "@angular/router";
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: "login",

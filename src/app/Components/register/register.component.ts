@@ -16,9 +16,7 @@ import { finalize, tap, takeUntil, take, first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
-
-import {sites} from './table';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 
 @Component({

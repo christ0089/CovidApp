@@ -68,6 +68,7 @@ export class AuthService {
       .signInWithCredential(signInCredential)
       .then(user => {
         console.log(user);
+        this.user = user.user;
       //   return this.userService.loadUserData(user.user.uid).toPromise();
        })
       // .then(userData => {
@@ -82,6 +83,7 @@ export class AuthService {
     .auth()
     .signInWithCredential(credential)
     .then(user => {
+      this.user = user.user;
     //   console.log(user);
     //  // return this.userService.loadUserData(user.user.uid).toPromise();
     })
@@ -93,6 +95,7 @@ export class AuthService {
   }
 
   signOut() {
+    this.user = null;
     return this.afAuth.auth.signOut();
   }
 

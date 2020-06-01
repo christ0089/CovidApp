@@ -1,5 +1,8 @@
 <h1 style="color: black; font-weight: 800; padding: 10px; height: 80px;">
   Centros de Diagnostico
-  <ion-button  shape="round"  routerLink="/auth">Iniciar Contact-tracing</ion-button>
+  <ion-button  shape="round"  routerLink="/auth" *ngIf="auth.user == null; else started">Iniciar Contact-tracing</ion-button>
+  <ng-template>
+    <ion-button  shape="round"  (click)="logout()" *ngIf="auth.user == null; else started">Cerrar Contact-tracing</ion-button>
+  </ng-template>
 </h1>
 <div #googleMaps id="googleMaps"></div>

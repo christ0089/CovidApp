@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { GoogleMapsProvider } from "src/app/services/google-maps/google-maps";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { Platform } from "@ionic/angular";
+import { AuthService } from 'src/app/services/auth/auth.service';
 declare var google: any;
 @Component({
   selector: "app-map",
@@ -15,7 +16,8 @@ export class MapPage {
   constructor(
     private googleMaps: GoogleMapsProvider,
     private geolocation: Geolocation,
-    private platform: Platform
+    private platform: Platform,
+    private auth: AuthService,
   ) {}
 
   ngOnInit() {
@@ -26,6 +28,9 @@ export class MapPage {
     });
   }
 
+  logout() {
+    this.auth.signOut();
+  }
 
   showMap() {
     let lat = 25.5786925;

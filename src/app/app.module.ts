@@ -33,7 +33,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './services/auth/auth.service';
 
 
 export const firebaseConfig = environment.firebaseConst;

@@ -8,7 +8,7 @@ import {
 import { NavController, ToastController, Platform } from "@ionic/angular";
 import { AngularFireFunctions } from "@angular/fire/functions";
 import { EventEmitter } from "@angular/core";
-import { AuthService } from "src/app/services/auth.service";
+import { AuthService } from "src/app/services/auth/auth.service";
 
 import { Router } from "@angular/router";
 // import {
