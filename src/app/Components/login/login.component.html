@@ -2,7 +2,7 @@
   <form [formGroup]="userForm" (ngSubmit)="sendSMSCode()">
     <ion-item>
       <ion-label position="floating">Telefono</ion-label>
-      <ion-input formControlName="phone"  maxLength='10' type='tel'></ion-input>
+      <ion-input formControlName="phone"  maxLength='10' ></ion-input>
     </ion-item>
     <div id="recaptcha-container"></div>
     <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Iniciar</ion-button>

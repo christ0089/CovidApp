@@ -8,6 +8,7 @@ import { ArticlePage } from "../article/article.page";
 import { ModalController } from "@ionic/angular";
 
 import { createAnimation } from "@ionic/core";
+import { NavServiceService } from 'src/app/services/nav-service.service';
 
 @Component({
   selector: "app-main-feed",
@@ -19,6 +20,7 @@ export class MainFeedPage implements OnInit {
   healthStatus = null;
   constructor(
     private db: AngularFireDatabase,
+    private navService: NavServiceService,
     private modalController: ModalController
   ) {
     this.articles$ = this.db
@@ -61,10 +63,11 @@ export class MainFeedPage implements OnInit {
 
  
 
-  async presentModal() {
+  async presentModal(article) {
     const modal = await this.modalController.create({
       component: ArticlePage,
     });
+    this.navService.setData(article);
     return await modal.present();
   }
 }

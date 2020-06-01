@@ -1,8 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { GoogleMapsProvider } from "src/app/services/google-maps/google-maps";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
-import { Platform } from "@ionic/angular";
+import { Platform, NavController } from "@ionic/angular";
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 declare var google: any;
 @Component({
   selector: "app-map",
@@ -17,6 +18,7 @@ export class MapPage {
     private googleMaps: GoogleMapsProvider,
     private geolocation: Geolocation,
     private platform: Platform,
+    private router: NavController,
     private auth: AuthService,
   ) {}
 
@@ -26,6 +28,10 @@ export class MapPage {
       console.log(this.mapRef);
       this.showMap();
     });
+  }
+
+  navigate() {
+    this.router.navigateRoot('auth');
   }
 
   logout() {

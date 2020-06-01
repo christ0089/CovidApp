@@ -8,6 +8,6 @@
     {{article.title}}
   </h1>
 
-  <div [innerHTML]="article.description"></div>
+  <div [innerHTML]="article.description | safe : 'html'"></div>
   <ion-button (click)="shareButton()">Compartir</ion-button>
 </ion-content>

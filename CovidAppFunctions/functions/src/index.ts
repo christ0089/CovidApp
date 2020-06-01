@@ -3,10 +3,6 @@ import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
 
-const path = require("path");
-const os = require("os");
-const fs = require("fs");
-
 const express = require("express");
 const cors = require("cors");
 
@@ -14,6 +10,9 @@ const app = express();
 
 // Automatically allow cross-origin requests
 app.use(cors({ origin: true }));
+
+
+admin.initializeApp();
 
 
 // import * as firebaseFunctions from "./firebaseFunctions";
